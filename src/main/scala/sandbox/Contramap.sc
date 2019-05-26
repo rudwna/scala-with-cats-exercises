@@ -22,6 +22,7 @@ implicit def boxPrintable[A](implicit p: Printable[A]): Printable[Box[A]] =
   (box: Box[A]) => p.contramap[Box[A]](_.value).format(box)
 
 // Book's solution, no need to create instance of Printable
+// since we already have instance from implicit parameter
 //implicit def boxPrintable[A](implicit p: Printable[A]): Printable[Box[A]] =
 //  p.contramap[Box[A]](_.value)
 
