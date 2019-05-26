@@ -1,6 +1,5 @@
 trait Printable[A] {
   def format(value: A): String
-
   def contramap[B](func: B => A): Printable[B] =
     (value: B) => format(func(value))
 }
@@ -18,6 +17,7 @@ format(true)
 
 final case class Box[A](value: A)
 
+// Since it's an overriding of format, we need to returns String
 implicit def boxPrintable[A](implicit p: Printable[A]): Printable[Box[A]] =
   (box: Box[A]) => p.contramap[Box[A]](_.value).format(box)
 
