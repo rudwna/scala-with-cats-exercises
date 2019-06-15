@@ -1,0 +1,11 @@
+List[Vector[Int]] to Vector[List[Int]] and the answer would be Vector(List(1, 2), List(3, 4))
+
+1,3 1,4 1,5 1,6 2,3 2,4 2,5 2,6
+
+: Option[List[Int]]
+Some(List(2, 4, 6))
+None
+
+Validated[List[Int]]
+Valid(List(2, 4, 6))
+Invalid(List(1 is not even, 3 is not even))
