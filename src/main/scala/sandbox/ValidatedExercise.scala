@@ -1,7 +1,7 @@
 package sandbox
 
 // Seems to get error in worksheet but works fine here
-object Validated extends App {
+object ValidatedExercise extends App {
   case class User(name: String, age: Int)
 
   import cats.data.Validated
